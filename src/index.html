@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>AoD-Downloader</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <script>window.$ = window.jQuery = require('jquery');</script>
+    <link rel="stylesheet" href="../node_modules/material-components-web/dist/material-components-web.css">
+    <script src="../node_modules/material-components-web/dist/material-components-web.js"></script>
+    
+    
+</head>
+
+<body>
+
+    <div style="height: 100%; width: 100%;">
+        <div id="contentCard" class="mdc-card mdc-card--outlined">
+
+
+            <div class="mdc-tab-bar" role="tablist">
+                <div class="mdc-tab-scroller">
+                    <div class="mdc-tab-scroller__scroll-area">
+                        <div class="mdc-tab-scroller__scroll-content">
+                            <button class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0">
+                                <span class="mdc-tab__content">
+                                    <span class="mdc-tab__text-label">Login</span>
+                                </span>
+                                <span class="mdc-tab-indicator mdc-tab-indicator--active">
+                                    <span
+                                        class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                                </span>
+                                <span class="mdc-tab__ripple topLeft"></span>
+                            </button>
+                            <button class="mdc-tab mdc-tab" role="tab" aria-selected="true" tabindex="2">
+                                <span class="mdc-tab__content">
+                                    <span class="mdc-tab__text-label">Config</span>
+                                </span>
+                                <span class="mdc-tab-indicator mdc-tab-indicator">
+                                    <span
+                                        class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                                </span>
+                                <span class="mdc-tab__ripple"></span>
+                            </button>
+                            <button class="mdc-tab mdc-tab" role="tab" aria-selected="true" tabindex="3">
+                                <span class="mdc-tab__content">
+                                    <span class="mdc-tab__text-label">Download</span>
+                                </span>
+                                <span class="mdc-tab-indicator mdc-tab-indicator">
+                                    <span
+                                        class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                                </span>
+                                <span class="mdc-tab__ripple  topRight"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="content content--active">
+
+                <div class="inputFields">
+                    <label class="mdc-text-field mdc-text-field--outlined">
+                        <span class="mdc-notched-outline">
+                            <span class="mdc-notched-outline__leading"></span>
+                            <span class="mdc-notched-outline__notch">
+                                <span class="mdc-floating-label" id="my-label-id">Username</span>
+                            </span>
+                            <span class="mdc-notched-outline__trailing"></span>
+                        </span>
+                        <input type="text" class="mdc-text-field__input" aria-labelledby="my-label-id"  id="usernameInput">
+                    </label>
+
+                    <label class="mdc-text-field mdc-text-field--outlined">
+                        <span class="mdc-notched-outline">
+                            <span class="mdc-notched-outline__leading"></span>
+                            <span class="mdc-notched-outline__notch">
+                                <span class="mdc-floating-label" id="my-label-id2" >Password</span>
+                            </span>
+                            <span class="mdc-notched-outline__trailing"></span>
+                        </span>
+                        <input type="password" class="mdc-text-field__input" aria-labelledby="my-label-id2"  id="passwordInput">
+                    </label>
+                
+                    <p id="resultLabel" class="result text"></p>
+
+                    <button class="mdc-button mdc-button--outlined" onclick="loginBtnClick(this)">
+                        <div class="mdc-button__ripple"></div>
+                        <span class="mdc-button__label">Login</span>
+                    </button>
+                </div>
+
+            </div>
+
+
+
+
+            <div class="content">
+                
+                
+                <div class="inputFields">
+
+                    <div class="togglerField">
+
+                        <label class="text">German</label>
+
+                        <div class="mdc-switch">
+                            <div class="mdc-switch__track"></div>
+                                <div class="mdc-switch__thumb-underlay">
+                                    <div class="mdc-switch__thumb"></div>
+                                    <input type="checkbox" id="basic-switch" class="mdc-switch__native-control" checked role="switch" onclick="this.blur();">
+                                </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="togglerField">
+
+                        <label class="text">Japanese</label>
+
+                        <div class="mdc-switch">
+                            <div class="mdc-switch__track"></div>
+                                <div class="mdc-switch__thumb-underlay">
+                                    <div class="mdc-switch__thumb"></div>
+                                    <input type="checkbox" id="basic-switch2" class="mdc-switch__native-control" role="switch" onclick="this.blur();">
+                                </div>
+                        </div>
+                    </div>
+
+
+                    <div class="mdc-menu mdc-menu-surface">
+                        <ul class="mdc-list" role="menu" aria-hidden="false" aria-orientation="vertical" tabindex="-1">
+                            <li class="mdc-list-item" role="menuitem">
+                                <span class="mdc-list-item__ripple"></span>
+                                <span class="mdc-list-item__text">mobile</span>
+                            </li>
+                            <li class="mdc-list-item" role="menuitem">
+                                <span class="mdc-list-item__ripple"></span>
+                                <span class="mdc-list-item__text">sd</span>
+                            </li>
+                            <li class="mdc-list-item" role="menuitem">
+                                <span class="mdc-list-item__ripple"></span>
+                                <span class="mdc-list-item__text">dvd</span>
+                            </li>
+                            <li class="mdc-list-item" role="menuitem">
+                                <span class="mdc-list-item__ripple"></span>
+                                <span class="mdc-list-item__text">hd</span>
+                            </li>
+                            <li class="mdc-list-item" role="menuitem">
+                                <span class="mdc-list-item__ripple"></span>
+                                <span class="mdc-list-item__text">fullhd</span>
+                            </li>
+                            <li class="mdc-list-item" role="menuitem">
+                                <span class="mdc-list-item__ripple"></span>
+                                <span class="mdc-list-item__text">bluray</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="togglerField" style="margin-top: 30px;">
+                        
+                        <label class="text">Quality</label>
+                        
+                        <button class="mdc-button mdc-button--outlined long" onclick="
+                        var contentRect = document.getElementById('contentCard').getBoundingClientRect();
+                        var selfRect = this.getBoundingClientRect();
+                        menu.setAbsolutePosition(selfRect.top - contentRect.top + 60, 
+                        selfRect.left - contentRect.left - 106); menu.open = true;">
+                            <div class="mdc-button__ripple"></div>
+                            <span class="mdc-button__label">mobile</span>
+                        </button>
+                    </div>
+
+
+                    <button class="mdc-button mdc-button--outlined">
+                        <div class="mdc-button__ripple"></div>
+                        <span class="mdc-button__label">Save</span>
+                    </button>
+                </div>
+
+
+
+            </div>
+
+
+            <div class="content">
+                
+                
+                <div class="inputFields">
+                    <label class="mdc-text-field mdc-text-field--outlined">
+                        <span class="mdc-notched-outline">
+                            <span class="mdc-notched-outline__leading"></span>
+                            <span class="mdc-notched-outline__notch">
+                                <span class="mdc-floating-label" id="my-label-id">Link or id</span>
+                            </span>
+                            <span class="mdc-notched-outline__trailing"></span>
+                        </span>
+                        <input type="text" class="mdc-text-field__input" aria-labelledby="my-label-id" id="urlInput">
+                    </label>
+
+                    <div role="progressbar" class="mdc-linear-progress" aria-label="Example Progress Bar" aria-valuemin="0" aria-valuemax="1" aria-valuenow="0">
+                        <div class="mdc-linear-progress__buffer">
+                          <div class="mdc-linear-progress__buffer-bar"></div>
+                          <div class="mdc-linear-progress__buffer-dots"></div>
+                        </div>
+                        <div class="mdc-linear-progress__bar mdc-linear-progress__primary-bar">
+                          <span class="mdc-linear-progress__bar-inner"></span>
+                        </div>
+                        <div class="mdc-linear-progress__bar mdc-linear-progress__secondary-bar">
+                          <span class="mdc-linear-progress__bar-inner"></span>
+                        </div>
+                      </div>
+
+                      <p id="resultLabel3" class="result text" style="margin-top: 30px;"></p>
+
+                    <button class="mdc-button mdc-button--outlined" onclick="downloadBtnClick(this)">
+                        <div class="mdc-button__ripple"></div>
+                        <span class="mdc-button__label">Download</span>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="js/script.js" type="text/javascript"></script>
+
+</body>
+</html>

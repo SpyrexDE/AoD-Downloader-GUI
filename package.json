@@ -1,0 +1,20 @@
+{
+  "name": "aod-downloader-gui",
+  "version": "1.0.0",
+  "description": "A modern GUI for AoDDownloader",
+  "main": "main.js",
+  "scripts": {
+    "run": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "AoD-Downloader-GUI"
+  },
+  "author": "Spyrex",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^11.1.1",
+    "jquery": "^3.5.1",
+    "material-components-web": "^9.0.0"
+  }
+}

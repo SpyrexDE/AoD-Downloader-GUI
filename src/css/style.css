@@ -1,0 +1,129 @@
+/* THEME */
+:root {
+    --mdc-theme-primary: #aa99c0 !important;
+    --mdc-theme-secondary: #0aff6c !important;
+    --mdc-theme-on-surface: #f70000 !important;
+    --mdc-theme-surface: #fb2b2b !important;
+    background-color: #16213e;
+}
+
+.mdc-button__label {
+    color: whitesmoke;
+}
+
+.mdc-text-field {
+    margin: 50px;
+}
+
+.mdc-floating-label {
+    color: #48526e !important;
+}
+
+.mdc-text-field--focused .mdc-floating-label {
+    color: var(--mdc-theme-primary) !important;
+}
+
+.mdc-text-field__input {
+    color: var(--mdc-theme-primary) !important;
+}
+
+.mdc-tab__text-label {
+    color: whitesmoke !important;
+}
+
+.topLeft {
+    border-top-left-radius: 10px !important;
+}
+
+.topRight {
+    border-top-right-radius: 10px !important;
+}
+
+.mdc-menu {
+    background-color: #16213e !important;
+}
+
+.mdc-list-item__text {
+    color: whitesmoke !important;
+}
+
+.mdc-linear-progress__buffer-bar {
+    background-color: #16213e !important;
+}
+
+/* FUNCTIONALITY */
+
+.content {
+    display: none;
+}
+  
+.content--active {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+}
+
+/* POSITIONING */
+
+#contentCard {
+    height: 500px;
+    width: 600px;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #232f50;
+    border-color: #1f2a49;
+    border-width: 2px;
+    border-radius: 10px;
+}
+
+.mdc-text-field {
+    width: 250px;
+    margin: 20px auto !important;
+    display: block !important;
+}
+
+.mdc-button {
+    margin: 50px auto !important;
+    display: block !important;
+}
+
+.mdc-button.long {
+    width: 150px;
+    margin: 0 !important;
+    float: right;
+    top: -8px;
+}
+
+.togglerField {
+    display: block;
+    margin-bottom: 20px;
+    width: 250px;
+}
+
+.mdc-switch {
+    float: right;
+}
+
+.text {
+    -webkit-font-smoothing: antialiased;
+    font-family: var(--mdc-typography-button-font-family, var(--mdc-typography-font-family, Roboto, sans-serif));
+    font-weight: (--mdc-typography-button-font-weight, 500);
+    letter-spacing: var(--mdc-typography-button-letter-spacing, 0.0892857143em);
+    font-size: var(--mdc-typography-button-font-size, 0.875rem);
+    color: whitesmoke;
+    text-transform: uppercase;
+    width: fit-content;
+    margin-right: 0;
+}
+
+.text.result {
+    margin: auto;
+    max-width: 300px;
+    text-align: center;
+}
